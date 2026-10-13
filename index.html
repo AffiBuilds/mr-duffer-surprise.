@@ -1,0 +1,691 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Mr. Duffer 🤎</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+:root {
+    --cream: #f8f0e7;
+    --paper: #fffaf5;
+    --brown: #88634f;
+    --dark: #49372e;
+    --pink: #e9b7b1;
+    --border: #ead5c2;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 25px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'Poppins', sans-serif;
+}
+
+button { font-family: inherit; }
+
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.float-heart {
+    position: absolute;
+    bottom: -40px;
+    opacity: 0;
+    animation: floatUp 9s linear infinite;
+}
+
+.float-heart:nth-child(1) { left: 8%; animation-delay: 0s; }
+.float-heart:nth-child(2) { left: 24%; animation-delay: 3s; }
+.float-heart:nth-child(3) { left: 76%; animation-delay: 1s; }
+.float-heart:nth-child(4) { left: 91%; animation-delay: 5s; }
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0); opacity: 0; }
+    15% { opacity: .7; }
+    100% { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 510px;
+    padding: 30px 25px;
+    text-align: center;
+    background: var(--paper);
+    border: 2px solid var(--border);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px #76594312;
+    overflow: hidden;
+}
+
+.topline {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #a17b66;
+}
+
+.sticker {
+    font-size: 43px;
+    margin-bottom: 12px;
+}
+
+h1 {
+    margin: 12px 0;
+    color: var(--brown);
+    font: 700 43px/1.1 'Caveat', cursive;
+}
+
+h2 {
+    color: var(--brown);
+    font: 700 30px 'Caveat', cursive;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 13px;
+    line-height: 1.95;
+}
+
+.small {
+    font-size: 11px;
+    color: #a17b66;
+}
+
+.page { animation: appear .45s ease; }
+
+.hidden { display: none !important; }
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.button {
+    display: inline-block;
+    margin: 10px 4px 0;
+    padding: 13px 21px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    background: var(--brown);
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.button:hover {
+    background: #694b3c;
+    transform: translateY(-2px);
+}
+
+.button.secondary {
+    color: var(--brown);
+    background: transparent;
+    border-color: var(--border);
+}
+
+.button.pink { background: #c88991; }
+
+.progress-wrap {
+    margin: 22px 0;
+    text-align: left;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    color: #a17b66;
+    font-size: 10px;
+    margin-bottom: 7px;
+}
+
+.progress {
+    height: 5px;
+    background: #f0e2d5;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+    background: #bd8d79;
+    transition: width .3s;
+}
+
+.note {
+    margin-top: 23px;
+    color: #a17b66;
+    font: 600 19px 'Caveat', cursive;
+}
+
+.divider {
+    width: 65px;
+    height: 2px;
+    margin: 20px auto;
+    background: #e8d2bf;
+}
+
+.award {
+    padding: 16px 12px;
+    margin: 12px 0;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: #fff5eb;
+    text-align: left;
+    display: flex;
+    gap: 13px;
+    align-items: center;
+}
+
+.award-icon { font-size: 30px; }
+
+.award strong {
+    font-size: 12px;
+    display: block;
+}
+
+.award span {
+    display: block;
+    font-size: 11px;
+    line-height: 1.7;
+    margin-top: 4px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.photo {
+    padding: 8px 8px 12px;
+    background: white;
+    border: 1px solid #eadfd4;
+    box-shadow: 0 5px 15px #76594312;
+    transform: rotate(-2deg);
+}
+
+.photo:nth-child(even) { transform: rotate(2deg); }
+
+.photo img {
+    width: 100%;
+    height: 135px;
+    display: block;
+    object-fit: cover;
+    border-radius: 4px;
+    background: #f0e2d5;
+}
+
+.photo label {
+    display: block;
+    padding-top: 9px;
+    font: 600 17px 'Caveat', cursive;
+    color: var(--brown);
+}
+
+.letter {
+    padding: 23px 18px;
+    margin: 18px 0;
+    text-align: left;
+    background: #fff5eb;
+    border: 1px solid var(--border);
+    border-radius: 5px 22px 5px 22px;
+}
+
+.letter p { font-size: 13px; }
+
+.envelope {
+    width: 145px;
+    height: 105px;
+    margin: 28px auto 20px;
+    border-radius: 9px;
+    background: #ead0b7;
+    display: grid;
+    place-items: center;
+    font-size: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px #76594318;
+    transition: .3s;
+}
+
+.envelope:hover {
+    transform: scale(1.06) rotate(-3deg);
+}
+
+.secret {
+    padding: 20px 15px;
+    margin: 15px 0;
+    border-radius: 18px;
+    background: #fff0ee;
+    border: 1px dashed #d8a3a1;
+}
+
+.secret p { font-size: 14px; }
+
+.big-heart {
+    display: inline-block;
+    font-size: 46px;
+    animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.17); }
+}
+
+.footer {
+    margin-top: 23px;
+    font: 600 17px 'Caveat', cursive;
+    color: #a17b66;
+}
+
+#confetti {
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+@media (max-width: 380px) {
+    .card { padding: 25px 16px; }
+    h1 { font-size: 37px; }
+    .photo img { height: 110px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts" aria-hidden="true">
+    <span class="float-heart">🤎</span>
+    <span class="float-heart">♡</span>
+    <span class="float-heart">💕</span>
+    <span class="float-heart">🤍</span>
+</div>
+
+<canvas id="confetti"></canvas>
+
+<main class="card">
+
+    <div class="sticker">🧸 🤎</div>
+    <div class="topline">A tiny surprise for one duffer</div>
+
+    <div class="progress-wrap">
+        <div class="progress-label">
+            <span id="stage">THE BEGINNING</span>
+            <span id="count">1 OF 6</span>
+        </div>
+        <div class="progress">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+
+    <!-- PAGE 1: WELCOME -->
+    <section class="page" id="page1">
+        <h1>Psst... Mr. Duffer!</h1>
+
+        <p>
+            Yes, you. 👀<br>
+            The certified idiot who somehow became
+            one of my favourite people.
+        </p>
+
+        <p>
+            I've made a tiny something for you.<br>
+            Don't get emotional just yet. 🤭
+        </p>
+
+        <div class="divider"></div>
+
+        <p class="small">WARNING: excessive affection ahead.</p>
+
+        <button class="button" onclick="go(2)">
+            Okay, I'm listening ♡
+        </button>
+
+        <div class="note">
+            your favourite person is being sappy again 🙄♡
+        </div>
+    </section>
+
+    <!-- PAGE 2: DUFFER AWARDS -->
+    <section class="page hidden" id="page2">
+        <h1>The Duffer Awards 🏆</h1>
+
+        <p>
+            After extensive research (absolutely none),
+            the awards go to...
+        </p>
+
+        <div class="award">
+            <div class="award-icon">🥇</div>
+            <div>
+                <strong>CEO OF ANNOYING ME</strong>
+                <span>For services rendered 24/7 without a break.</span>
+            </div>
+        </div>
+
+        <div class="award">
+            <div class="award-icon">🤡</div>
+            <div>
+                <strong>PROFESSIONAL IDIOT</strong>
+                <span>For saying the most ridiculous things with confidence.</span>
+            </div>
+        </div>
+
+        <div class="award">
+            <div class="award-icon">🤎</div>
+            <div>
+                <strong>MY FAVOURITE HUMAN</strong>
+                <span>For a reason I can't explain without getting cheesy.</span>
+            </div>
+        </div>
+
+        <p class="small">No refunds. No exchanges. You're stuck with me.</p>
+
+        <button class="button secondary" onclick="go(1)">← Back</button>
+        <button class="button" onclick="go(3)">Next surprise →</button>
+    </section>
+
+    <!-- PAGE 3: PHOTO MEMORIES -->
+    <section class="page hidden" id="page3">
+        <h1>Little Memory Lane 📸</h1>
+
+        <p>
+            Some moments deserve their own little corner.
+            Here's a space for our memories.
+        </p>
+
+        <div class="photo-grid">
+            <div class="photo">
+                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=500&q=80"
+                     alt="Romantic hearts">
+                <label>Our kind of chaos ♡</label>
+            </div>
+
+            <div class="photo">
+                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=500&q=80"
+                     alt="Sweet romantic moment">
+                <label>My soft spot 🤎</label>
+            </div>
+
+            <div class="photo">
+                <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=500&q=80"
+                     alt="Pink flowers">
+                <label>A little reminder 🌷</label>
+            </div>
+
+            <div class="photo">
+                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=500&q=80"
+                     alt="A sweet memory">
+                <label>Just us ♡</label>
+            </div>
+        </div>
+
+        <p class="small">
+            Psst... replace these sample photos with your own favourite memories later.
+        </p>
+
+        <button class="button secondary" onclick="go(2)">← Back</button>
+        <button class="button" onclick="go(4)">A little something more →</button>
+    </section>
+
+    <!-- PAGE 4: THE LETTER -->
+    <section class="page hidden" id="page4">
+        <div class="sticker">💌</div>
+        <h1>To My Mr. Duffer</h1>
+
+        <div class="letter">
+            <p>Hey, you. 🤎</p>
+
+            <p>
+                I know I don't always express things the right way.
+                Sometimes my words come out wrong, and sometimes
+                my stubbornness gets the better of me.
+            </p>
+
+            <p>
+                I'm sorry for the times I've hurt you.
+                I never want my mistakes to make you doubt
+                that you matter to me.
+            </p>
+
+            <p>
+                You're annoying, dramatic, stubborn and
+                occasionally impossible. And somehow, you're
+                still one of my favourite people.
+            </p>
+
+            <p>
+                I don't expect us to be perfect.
+                I just hope we keep trying to understand each
+                other, even on the difficult days.
+            </p>
+
+            <p>
+                So here's a tiny reminder that behind all
+                my teasing, there's a heart that genuinely
+                cares about you.
+            </p>
+
+            <p><strong>Yours in chaos and affection, always. ♡</strong></p>
+        </div>
+
+        <button class="button secondary" onclick="go(3)">← Back</button>
+        <button class="button" onclick="go(5)">There's a secret... 🔐</button>
+    </section>
+
+    <!-- PAGE 5: SECRET MESSAGE -->
+    <section class="page hidden" id="page5">
+        <div class="sticker">🔐 💗</div>
+        <h1>A Secret For You</h1>
+
+        <p>
+            Okay, Duffer. This part is just for you.
+            Tap the envelope to open your secret message.
+        </p>
+
+        <div class="envelope" id="envelope"
+             role="button" tabindex="0"
+             aria-label="Open secret letter"
+             onclick="unlock()"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();unlock();}">
+            💌
+        </div>
+
+        <p class="small" id="envelopeHint">Psst... go on. Tap it. ♡</p>
+
+        <div class="secret hidden" id="secretMessage">
+            <div class="big-heart">🤎</div>
+            <h2>Here's the secret...</h2>
+
+            <p>
+                In case I don't say it enough,
+                you mean more to me than you probably realise.
+            </p>
+
+            <p>
+                Even when we're being stubborn,
+                even when things get messy,
+                you're someone I don't want to take for granted.
+            </p>
+
+            <p>
+                I can't promise every day will be perfect.
+                But I can promise this message is genuine.
+            </p>
+
+            <p><strong>You're my favourite duffer. And that's that. 🧸</strong></p>
+        </div>
+
+        <button class="button secondary" onclick="go(4)">← Back</button>
+        <button class="button" onclick="go(6)">One last thing →</button>
+    </section>
+
+    <!-- PAGE 6: GRAND FINALE -->
+    <section class="page hidden" id="page6">
+        <div class="sticker">🧸💞✨</div>
+        <h1>One Last Question...</h1>
+
+        <p>
+            If I could choose my favourite duffer
+            all over again...
+        </p>
+
+        <h2>I'd still choose you. 🤎</h2>
+
+        <div class="divider"></div>
+
+        <p>
+            Now, are you ready to tolerate me
+            for a very, very long time?
+        </p>
+
+        <button class="button pink" onclick="sayYes()">
+            YES, you weirdo! 💗
+        </button>
+
+        <button class="button secondary" onclick="sayNo()">
+            Hmm... NO 🙄
+        </button>
+
+        <div id="ending" class="hidden">
+            <div class="divider"></div>
+            <div class="big-heart">💖</div>
+            <h2 id="endingTitle">I KNEW IT! 😭</h2>
+            <p id="endingText">
+                Come here, you. Sending the biggest virtual hug! 🫂
+            </p>
+            <p class="note">Made with love, just for you ♡</p>
+            <button class="button secondary" onclick="go(1)">
+                Relive the surprise ↺
+            </button>
+        </div>
+    </section>
+
+    <div class="footer">a little website, with a lot of heart ♡</div>
+
+</main>
+
+<script>
+const titles = [
+    "THE BEGINNING",
+    "THE AWARDS",
+    "MEMORY LANE",
+    "A LITTLE LETTER",
+    "TOP SECRET",
+    "THE FINALE"
+];
+
+function go(number) {
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.add("hidden");
+    });
+
+    const current = document.getElementById("page" + number);
+    current.classList.remove("hidden");
+
+    // Replay the entrance animation.
+    current.style.animation = "none";
+    void current.offsetWidth;
+    current.style.animation = "";
+
+    document.getElementById("stage").textContent = titles[number - 1];
+    document.getElementById("count").textContent = number + " OF 6";
+    document.getElementById("progressFill").style.width =
+        (number / 6 * 100) + "%";
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function unlock() {
+    document.getElementById("secretMessage").classList.remove("hidden");
+    document.getElementById("envelope").textContent = "💖";
+    document.getElementById("envelopeHint").textContent =
+        "Secret unlocked! You nosy little duffer. 🤭";
+    burstHearts();
+}
+
+document.getElementById("progressFill").style.width = (1 / 6 * 100) + "%";
+
+function sayYes() {
+    document.getElementById("ending").classList.remove("hidden");
+    document.getElementById("endingTitle").textContent = "I KNEW IT! 😭💗";
+    document.getElementById("endingText").textContent =
+        "Come here, you. Sending the biggest virtual hug! " +
+        "You're officially stuck with your favourite person. 🫂🤎";
+    burstHearts();
+}
+
+function sayNo() {
+    document.getElementById("ending").classList.remove("hidden");
+    document.getElementById("endingTitle").textContent =
+        "EXCUSE ME?! 😭";
+    document.getElementById("endingText").textContent =
+        "I'm choosing to believe that was a typo. " +
+        "Please reconsider, Mr. Duffer. 🥹🤎";
+}
+
+function burstHearts() {
+    const canvas = document.getElementById("confetti");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = Array.from({ length: 90 }, () => ({
+        x: Math.random() * canvas.width,
+        y: -20 - Math.random() * canvas.height * 0.4,
+        size: 8 + Math.random() * 12,
+        speed: 2 + Math.random() * 4,
+        drift: (Math.random() - 0.5) * 2,
+        symbol: Math.random() > 0.5 ? "♥" : "♡"
+    }));
+
+    let frames = 0;
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach(p => {
+            ctx.font = p.size + "px serif";
+            ctx.fillStyle = "#c88991";
+            ctx.fillText(p.symbol, p.x, p.y);
+            p.y += p.speed;
+            p.x += p.drift;
+        });
+
+        frames++;
+
+        if (frames < 130) {
+            requestAnimationFrame(draw);
+        } else {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    }
+
+    draw();
+}
+</script>
+
+</body>
+</html>
